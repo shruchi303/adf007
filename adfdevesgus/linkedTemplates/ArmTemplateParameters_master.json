@@ -20,6 +20,15 @@
 		"AzureDataLakeStorage5_accountKey": {
 			"value": ""
 		},
+		"AzureDataLakeStorage6_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage7_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage8_accountKey": {
+			"value": ""
+		},
 		"LS_ADLS_CSV_accountKey": {
 			"value": ""
 		},
@@ -63,6 +72,15 @@
 			"value": "https://adlsdevesgus.dfs.core.windows.net/"
 		},
 		"AzureDataLakeStorage5_properties_typeProperties_url": {
+			"value": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage6_properties_typeProperties_url": {
+			"value": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage7_properties_typeProperties_url": {
+			"value": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage8_properties_typeProperties_url": {
 			"value": "https://adlsdevesgus.dfs.core.windows.net/"
 		},
 		"LS_ADLS_CSV_properties_typeProperties_url": {
