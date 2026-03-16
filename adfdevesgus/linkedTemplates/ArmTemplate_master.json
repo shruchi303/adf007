@@ -1,0 +1,245 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfdevesgus"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+		},
+		"AzureDataLakeStorage3_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage3'"
+		},
+		"AzureDataLakeStorage4_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage4'"
+		},
+		"AzureDataLakeStorage5_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage5'"
+		},
+		"LS_ADLS_CSV_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_CSV'"
+		},
+		"LS_ADLS_PQRQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PQRQUET'"
+		},
+		"LS_ADLS_TO_ADLS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_TO_ADLS'"
+		},
+		"LS_BLOB_EXCEL_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_BLOB_EXCEL'"
+		},
+		"LS_BULKCSV_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_BULKCSV'"
+		},
+		"LS_COPY_ADLS_CSV_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_COPY_ADLS_CSV'"
+		},
+		"LS_FOR_VALIDATION_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_FOR_VALIDATION'"
+		},
+		"LS_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_PARQUET'"
+		},
+		"dS_CHILD_VALIDATION_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'dS_CHILD_VALIDATION'"
+		},
+		"ls_multiple_csv_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_multiple_csv'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage4_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage5_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"LS_ADLS_CSV_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"LS_ADLS_PQRQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net"
+		},
+		"LS_ADLS_TO_ADLS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"LS_BULKCSV_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net"
+		},
+		"LS_COPY_ADLS_CSV_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"LS_FOR_VALIDATION_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"LS_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"dS_CHILD_VALIDATION_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net/"
+		},
+		"ls_multiple_csv_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevesgus.dfs.core.windows.net"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adfdevesgus_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					},
+					"AzureDataLakeStorage3_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage3_accountKey')]"
+					},
+					"AzureDataLakeStorage4_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage4_accountKey')]"
+					},
+					"AzureDataLakeStorage5_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage5_accountKey')]"
+					},
+					"LS_ADLS_CSV_accountKey": {
+						"value": "[parameters('LS_ADLS_CSV_accountKey')]"
+					},
+					"LS_ADLS_PQRQUET_accountKey": {
+						"value": "[parameters('LS_ADLS_PQRQUET_accountKey')]"
+					},
+					"LS_ADLS_TO_ADLS_accountKey": {
+						"value": "[parameters('LS_ADLS_TO_ADLS_accountKey')]"
+					},
+					"LS_BLOB_EXCEL_connectionString": {
+						"value": "[parameters('LS_BLOB_EXCEL_connectionString')]"
+					},
+					"LS_BULKCSV_accountKey": {
+						"value": "[parameters('LS_BULKCSV_accountKey')]"
+					},
+					"LS_COPY_ADLS_CSV_accountKey": {
+						"value": "[parameters('LS_COPY_ADLS_CSV_accountKey')]"
+					},
+					"LS_FOR_VALIDATION_accountKey": {
+						"value": "[parameters('LS_FOR_VALIDATION_accountKey')]"
+					},
+					"LS_PARQUET_accountKey": {
+						"value": "[parameters('LS_PARQUET_accountKey')]"
+					},
+					"dS_CHILD_VALIDATION_accountKey": {
+						"value": "[parameters('dS_CHILD_VALIDATION_accountKey')]"
+					},
+					"ls_multiple_csv_accountKey": {
+						"value": "[parameters('ls_multiple_csv_accountKey')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage3_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage4_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage4_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage5_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage5_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_CSV_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_CSV_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_PQRQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_PQRQUET_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_TO_ADLS_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_TO_ADLS_properties_typeProperties_url')]"
+					},
+					"LS_BULKCSV_properties_typeProperties_url": {
+						"value": "[parameters('LS_BULKCSV_properties_typeProperties_url')]"
+					},
+					"LS_COPY_ADLS_CSV_properties_typeProperties_url": {
+						"value": "[parameters('LS_COPY_ADLS_CSV_properties_typeProperties_url')]"
+					},
+					"LS_FOR_VALIDATION_properties_typeProperties_url": {
+						"value": "[parameters('LS_FOR_VALIDATION_properties_typeProperties_url')]"
+					},
+					"LS_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_PARQUET_properties_typeProperties_url')]"
+					},
+					"dS_CHILD_VALIDATION_properties_typeProperties_url": {
+						"value": "[parameters('dS_CHILD_VALIDATION_properties_typeProperties_url')]"
+					},
+					"ls_multiple_csv_properties_typeProperties_url": {
+						"value": "[parameters('ls_multiple_csv_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
